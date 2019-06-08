@@ -1,6 +1,8 @@
 # Xylophone
 An iOS and Android music playing app that plays xylophone sounds. Written in Flutter 1.5 / Dart 2.3.
 
+![](art/screenshot/xylophone_00.png?raw=true)
+
 ### Licensing
 Xylophone is licensed under [the MIT License](LICENSE).
 
