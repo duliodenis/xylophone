@@ -17,14 +17,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound(resource: sender.currentTitle!)
+        // Dim the opacity of sender to half
+        sender.alpha = 0.5
+        // After 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            // Bring's sender's opacity back up to fully opaque.
+            sender.alpha = 1.0
+        }
+        playSound(soundName: sender.currentTitle!)
     }
     
-    func playSound(resource: String) {
-            let url = Bundle.main.url(forResource: resource, withExtension: "wav")
-            player = try! AVAudioPlayer(contentsOf: url!)
-            player.play()
-                    
-        }
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
 }
 
